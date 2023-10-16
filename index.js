@@ -1,6 +1,7 @@
 const http = require('http');
 
 http.createServer((req, resp) => {
-    resp.write("Hello This is archit");
+    resp.writeHead(200, { 'Content-Type': 'application\json' });
+    resp.write(JSON.stringify({ name: 'Archit Gupta', email: 'architgupta225@gmail.com' }))
     resp.end();
 }).listen(4500);
