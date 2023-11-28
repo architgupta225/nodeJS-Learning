@@ -1,13 +1,13 @@
-let a = 10;
-let b = 0;
+const dbConnect = require("./mongoDb.js");
 
+const main = async () => {
+  try {
+    let data = await dbConnect();
+    data = await data.find().toArray();
+    console.log(data);
+  } catch {
+    console.log("something went wrong");
+  }
+};
 
-let waitingData = new Promise((resolve, reject) => {
-    setTimeout(() => {
-        resolve(30);
-    }, 2000);
-});
-
-waitingData.then((data) => {
-    console.log(a + data);
-})
+main();
