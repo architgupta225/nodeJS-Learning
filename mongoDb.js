@@ -15,14 +15,12 @@ const client = new MongoClient(uri, {
 async function dbConnect() {
   try {
     await client.connect();
-    // await client.db("admin").command({ ping: 1 });
+    await client.db("admin").command({ ping: 1 });
     let db = client.db(database);
-    return db.collection("products");
+    return db.collection('products');
   } catch (error) {
     console.error("Error connecting to MongoDB:", error);
-  } finally {
-    await client.close();
-  }
+  } 
 }
 
 module.exports = dbConnect;
