@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 
 const uri =
-  'mongodb+srv://admin:admin@archit.cggjo1p.mongodb.net/?retryWrites=true&w=majority';
+  'mongodb+srv://admin:admin@archit.cggjo1p.mongodb.net/e-comm?retryWrites=true&w=majority';
 const database = 'e-comm';
 
 async function dbConnect() {
@@ -21,7 +21,8 @@ async function dbConnect() {
 
     const ProductSchema = mongoose.model('Product', new mongoose.Schema({
       // Define your product schema here
-      name: String
+      name: String,
+      price : Number,
     }));
     return ProductSchema
   } catch (error) {

@@ -9,6 +9,7 @@
   "author": "Archit Gupta",
   "license": "ISC",
   "dependencies": {
+    "express": "^4.18.2",
     "fs": "^0.0.1-security",
     "mongoose": "^8.0.2",
     "path": "^0.12.7"
